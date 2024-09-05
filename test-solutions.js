@@ -1,5 +1,10 @@
 const inventory = require("./inventory.js")
-const { findCarById, getLastCar, sortCarModels } = require("./solutions.js")
+const {
+  findCarById,
+  getLastCar,
+  sortCarModels,
+  getCarYears,
+} = require("./solutions.js")
 
 // ----------------Questions 1----------------
 const car33 = findCarById(inventory, 33)
@@ -14,3 +19,7 @@ console.log(`Last car is a ${lastCar.car_make} ${lastCar.car_model}`)
 // ----------------Questions 3----------------
 const sortedCarModels = sortCarModels(inventory)
 console.log(sortedCarModels)
+
+// ----------------Questions 4----------------
+const carYears = getCarYears(inventory)
+console.log(carYears)

@@ -64,4 +64,23 @@ function sortCarModels(inventory) {
   return models
 }
 
-module.exports = { findCarById, getLastCar, sortCarModels }
+// ----------------Solution 4----------------
+
+function getCarYears(inventory) {
+  if (!inventory) throw new Error("No inventory data exist")
+
+  if (!Array.isArray(inventory)) throw new Error("Wrong data format")
+
+  if (inventory.length === 0) throw new Error("Inventory is empty")
+
+  const years = []
+  for (let i = 0; i < inventory.length; i++) {
+    if (inventory[i].hasOwnProperty("car_year"))
+      years.push(inventory[i].car_year)
+  }
+  if (years.length === 0) throw new Error("Car Year does not exist")
+
+  return years
+}
+
+module.exports = { findCarById, getLastCar, sortCarModels, getCarYears }
