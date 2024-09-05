@@ -101,6 +101,8 @@ function getOlderCars(carYears, year) {
   return olderCars
 }
 
+// ----------------Solution 6----------------
+
 function findBMWAndAudiCars(inventory) {
   if (!inventory) throw new Error("No inventory data exist")
 
