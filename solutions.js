@@ -102,6 +102,12 @@ function getOlderCars(carYears, year) {
 }
 
 function findBMWAndAudiCars(inventory) {
+  if (!inventory) throw new Error("No inventory data exist")
+
+  if (!Array.isArray(inventory)) throw new Error("Wrong data format")
+
+  if (inventory.length === 0) throw new Error("Inventory is empty")
+
   const bmwAndAudiCars = []
   for (let i = 0; i < inventory.length; i++) {
     if (inventory[i].car_make === "BMW" || inventory[i].car_make === "Audi") {
