@@ -5,6 +5,7 @@ const {
   sortCarModels,
   getCarYears,
   getOlderCars,
+  findBMWAndAudiCars,
 } = require("./solutions.js")
 
 // ----------------Questions 1----------------
@@ -28,3 +29,7 @@ console.log(carYears)
 // ----------------Questions 5----------------
 const olderCars = getOlderCars(carYears, 2000)
 console.log(olderCars.length)
+
+// ----------------Question 6----------------
+const bmwAndAudiCars = findBMWAndAudiCars(inventory)
+console.log(JSON.stringify(bmwAndAudiCars))

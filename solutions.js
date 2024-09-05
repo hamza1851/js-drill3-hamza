@@ -101,10 +101,24 @@ function getOlderCars(carYears, year) {
   return olderCars
 }
 
+function findBMWAndAudiCars(inventory) {
+  const bmwAndAudiCars = []
+  for (let i = 0; i < inventory.length; i++) {
+    if (inventory[i].car_make === "BMW" || inventory[i].car_make === "Audi") {
+      bmwAndAudiCars.push(inventory[i])
+    }
+  }
+  if (bmwAndAudiCars.length === 0)
+    throw new Error("No Audi and BMW cars available")
+
+  return bmwAndAudiCars
+}
+
 module.exports = {
   findCarById,
   getLastCar,
   sortCarModels,
   getCarYears,
   getOlderCars,
+  findBMWAndAudiCars,
 }
