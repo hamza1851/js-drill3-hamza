@@ -83,4 +83,28 @@ function getCarYears(inventory) {
   return years
 }
 
-module.exports = { findCarById, getLastCar, sortCarModels, getCarYears }
+// ----------------Solution 5----------------
+
+function getOlderCars(carYears, year) {
+  if (typeof year !== "number") throw new Error("Inventory is empty")
+  if (carYears.length <= 0) throw new Error("Car years does not exist")
+  if (carYears.constructor !== Array || year.constructor !== Number)
+    throw new Error("Wrong data format")
+
+  const olderCars = []
+  carYears
+  for (let i = 0; i < carYears.length; i++) {
+    if (carYears[i] < year) {
+      olderCars.push(carYears[i])
+    }
+  }
+  return olderCars
+}
+
+module.exports = {
+  findCarById,
+  getLastCar,
+  sortCarModels,
+  getCarYears,
+  getOlderCars,
+}

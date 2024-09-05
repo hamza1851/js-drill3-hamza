@@ -4,6 +4,7 @@ const {
   getLastCar,
   sortCarModels,
   getCarYears,
+  getOlderCars,
 } = require("./solutions.js")
 
 // ----------------Questions 1----------------
@@ -23,3 +24,7 @@ console.log(sortedCarModels)
 // ----------------Questions 4----------------
 const carYears = getCarYears(inventory)
 console.log(carYears)
+
+// ----------------Questions 5----------------
+const olderCars = getOlderCars(carYears, 2000)
+console.log(olderCars.length)
