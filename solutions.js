@@ -1,7 +1,6 @@
 // const inventory = require("./inventory.js")
 
 function findCarById(inventory, id) {
-  console.log(inventory.constructor === Array)
   try {
     if (!inventory) {
       console.log("No inventory")
@@ -22,4 +21,9 @@ function findCarById(inventory, id) {
   }
 }
 
-module.exports = { findCarById }
+function getLastCar(inventory) {
+  if (!inventory) console.log("No inventory data exist")
+  return inventory[inventory.length - 1]
+}
+
+module.exports = { findCarById, getLastCar }
